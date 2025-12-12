@@ -30,9 +30,9 @@ def log_test_data():
                 
                 # FIX: Create the spreadsheet explicitly inside the folder
                 spreadsheet = client.create(sheet_name, folder_id=folder_id)
-            spreadsheet.share(st.secrets["gcp_service_account"]["client_email"], role='writer', type='user')
-            sheet = spreadsheet.sheet1
-            sheet.append_row(["Timestamp", "Test Value"])
+                spreadsheet.share(st.secrets["gcp_service_account"]["client_email"], role='writer', type='user')
+                sheet = spreadsheet.sheet1
+                sheet.append_row(["Timestamp", "Test Value"])
 
         # Log the data
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
