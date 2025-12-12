@@ -23,7 +23,7 @@ def log_test_data():
         # Open or create the sheet
         try:
                 sheet = client.open(sheet_name).sheet1
-            except gspread.SpreadsheetNotFound: # <-- FIX: Catch the correct error
+        except gspread.SpreadsheetNotFound: # <-- FIX: Catch the correct error
             # Create sheet and add a header row if it doesn't exist
             spreadsheet = client.create(sheet_name)
             spreadsheet.share(st.secrets["gcp_service_account"]["client_email"], role='writer', type='user')
