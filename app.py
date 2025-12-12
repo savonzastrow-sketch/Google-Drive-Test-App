@@ -26,7 +26,7 @@ def log_test_data():
         except gspread.SpreadsheetNotFound:
                 
                 # Retrieve the FOLDER_ID from secrets
-                folder_id = st.secrets["app_config"]["folder_id"] 
+                folder_id = st.secrets["FOLDER_ID"]
                 
                 # FIX: Create the spreadsheet explicitly inside the folder
                 spreadsheet = client.create(sheet_name, folder_id=folder_id)
